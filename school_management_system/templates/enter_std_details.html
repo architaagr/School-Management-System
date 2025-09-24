@@ -1,0 +1,57 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+	        background: url('https://miro.medium.com/v2/resize:fit:1200/1*DQrnDN3WPUA1t2-VxCXbVg.jpeg') no-repeat center center fixed;
+	        background-size: cover;
+        }
+        a:link {
+  color: green;
+}
+
+    </style>
+</head>
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<h2>ENTER STUDENT DETAILS</h2>
+<form method="POST" action="{% url 'std_details' %}">
+{% csrf_token %}
+
+  <div class="form-group">
+    
+    <input type="integer" class="form-control" aria-describedby="emailHelp" placeholder="rollno" name="rollno">
+    
+  </div>
+  <div class="form-group">
+    
+    <input type="text" class="form-control" placeholder="name" name="name">
+  </div>
+
+  
+  <div class="form-group">
+    
+    <input type="integer" class="form-control" aria-describedby="emailHelp" placeholder="grade" name="grade">
+    
+  </div>
+
+  <div class="form-group">
+
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="section" name="section">
+
+  </div>
+
+  <div class="form-group">
+    
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="password" name="pwd">
+    
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<a href = "{%url 'home'%}" style="color: white; font-size: 25px;">Go To Home</a>
+</body>
+{% endblock %}
+</html>

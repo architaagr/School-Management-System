@@ -1,0 +1,31 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+	        background: url('https://cvhsnews.org/wp-content/uploads/2024/01/mahito2-1200x647.png') no-repeat center center fixed;
+	        background-size: cover;
+        }
+    </style>
+</head>
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<h2 style="color:white">UPDATE STUDENT MARKS</h2>
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="number" class="form-control" placeholder="Student ID" name="student_id" required>
+    </div>
+
+    <div class="form-group">
+        <input type="number" class="form-control" placeholder="New Marks" name="new_marks" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<a href="{% url 'view_marks' %}">Next Page</a>
+</body>
+{% endblock %}
+</html>

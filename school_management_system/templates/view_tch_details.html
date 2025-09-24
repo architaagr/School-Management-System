@@ -1,0 +1,36 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+	        background: url('https://rukminim2.flixcart.com/image/850/1000/xif0q/poster/j/i/g/medium-movie-my-neighbor-totoro-2-on-fine-art-paper-hd-quality-original-imah34vchyep6yhf.jpeg?q=90&crop=false') no-repeat center center fixed;
+	        background-size: cover;
+        }
+    </style>
+</head>
+{% extends 'base.html' %}
+{% block content %}
+        
+<h2 style="color:white">TEACHER DETAILS</h2>
+
+<table border="1" align='center' style="background-color: #e0f2f7;">
+    <tr>
+	<th>ID</th>
+        <th>Name</th>
+	<th>Subject</th>
+	<th>Date of Joining</th>
+
+    </tr>
+    {% for result in all %}
+    <tr>
+	<td>{{result.teacher_id}}</td>
+        <td>{{result.name}}</td>
+        <td>{{result.subject}}</td>
+	<td>{{result.doj}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href = "{%url 'teacher'%}" style="color: white; font-size: 25px;"><p style="text-align:center">GO TO HOME PAGE</a>
+{% endblock %}
+</html>

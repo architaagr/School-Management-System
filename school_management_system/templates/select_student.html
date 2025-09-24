@@ -1,0 +1,70 @@
+
+
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+	        background: url('https://i.redd.it/smftbwtje5vz.jpg') no-repeat center center fixed;
+	        background-size: cover;
+        }
+    </style>
+</head>
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<form action="#" method ="post">
+{%csrf_token%}
+<center><h1 style="color:black"><b>SELECT STUDENT</b></h1>
+<hr>
+<select name="rollno">
+<option selected disabled=true>--Select Rollno--</option>
+{% for student in data %}
+    <option value="{{ student.rollno }}">{{ student.rollno }}</option>
+{% endfor %}
+</select>
+
+<select name="name">
+<option selected disabled=true>--Select Name--</option>
+{% for student in data %}
+    <option value="{{ student.name }}">{{ student.name }}</option>
+{% endfor %}
+</select>
+
+<select name="grade">
+<option selected disabled=true>--Select Grade--</option>
+{% for student in data %}
+    <option value="{{ student.grade }}">{{ student.grade }}</option>
+{% endfor %}
+</select>
+
+
+<input type="submit" value="Search">
+<hr>
+<table border="1" style="background-color: #e0f2f7;">
+    <tr>
+	<th>ID</th>
+        <th>Rollno</th>
+        <th>Name</th>
+	<th>Grade</th>
+
+    </tr>
+    {% for result in data %}
+    <tr>
+	<td>{{result.student_id}}</td>
+        <td>{{result.rollno}}</td>
+        <td>{{result.name}}</td>
+        <td>{{result.grade}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</br>
+</br>
+</br>
+
+<a href = "{%url 'enter_marks'%}" style="color: white; font-size: 25px;"><p style="text-align:center">ENTER MARKS</a>
+</form>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+	        background: url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/344/2022/03/23060924/Ghibli-Blog-photo.jpeg') no-repeat center center fixed;
+	        background-size: cover;
+        }
+    </style>
+</head>
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<h2 style="color:white">ENTER TEACHER DETAILS</h2>
+<form method="POST" action="{% url 'tch_details' %}">
+{% csrf_token %}
+  <div class="form-group">
+    
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="name" name="name">
+    
+  </div>
+  <div class="form-group">
+
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="password" name="pwd">
+
+  </div>
+  <div class="form-group">
+    
+    <input type="text" class="form-control" placeholder="subject" name="subject">
+  </div>
+
+  
+<div class="form-group">
+    
+    <input type="date" class="form-control" aria-describedby="emailHelp" placeholder="doj" name="doj"></br>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<a href = "{%url 'home'%}" style="color: white; font-size: 25px;">Go To Home</a>
+</body>
+{% endblock %}
+</html>

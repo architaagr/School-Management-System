@@ -1,0 +1,38 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+	        background: url('https://i.pinimg.com/originals/19/18/cf/1918cf43a874b5f824cb1afd8f00d2fe.jpg') no-repeat center center fixed;
+	        background-size: cover;
+        }
+    </style>
+</head>
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<h2>ENTER STUDENT MARKS</h2>
+<form method="POST" action="{% url 'enter_marks' %}">
+{% csrf_token %}
+
+  <div class="form-group">
+    
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="marks" name="marks">
+    
+  </div>
+
+
+<div class="form-group">
+    
+    <input type="integer" class="form-control" aria-describedby="emailHelp" placeholder="student" name="student">
+    
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<a href = "{%url 'view_marks'%}" style="color: white; font-size: 25px;">View Marks</a>
+</body>
+{% endblock %}
+</html>

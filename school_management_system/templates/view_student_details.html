@@ -1,0 +1,39 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+	        background: url('https://i.pinimg.com/originals/a9/04/b9/a904b9d10fa0e2f5947cb12bbadd31aa.jpg') no-repeat center center fixed;
+	        background-size: cover;
+        }
+    </style>
+</head>
+{% extends 'base.html' %}
+{% block content %}
+        
+<h2 style="color:white">STUDENT DETAILS</h2>
+
+<table border="1" align='center' style="background-color: #e0f2f7;">
+    <tr>
+	<th>ID</th>
+        <th>Rollno</th>
+        <th>Name</th>
+	<th>Grade</th>
+	<th>Section</th>
+
+    </tr>
+    {% for result in all %}
+    <tr>
+	<td>{{result.student_id}}</td>
+        <td>{{result.rollno}}</td>
+        <td>{{result.name}}</td>
+        <td>{{result.grade}}</td>
+	<td>{{result.section}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href = "{%url 'student'%}" style="color: white; font-size: 25px;"><p style="text-align:center">GO TO HOME PAGE</a>
+
+{% endblock %}
+</html>

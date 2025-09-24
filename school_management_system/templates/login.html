@@ -1,0 +1,34 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+	        background: url('https://i.redd.it/backgrounds-from-kikis-delivery-service-by-art-director-v0-u0t4x305vw1c1.jpg?width=2500&format=pjpg&auto=webp&s=ee941d546f24c79dfd0acf9374e5c35231a4b3c6') no-repeat center center fixed;
+	        background-size: cover;
+        }
+    </style>
+</head>
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<form action="#" method ="post">
+{%csrf_token%}
+<center><h1>LOGIN</h1>
+<br><label for="val"><b><h4>Username</h4></b></label></br>
+    <input type="integer" id="val" name="val" placeholder="username"></br>
+<br><label for="val"><b><h4>Password</h4></b></label>
+    </br><input type="varchar" id="password" name="pwd" placeholder="password">
+
+    <br><br><input type="submit" value="View"  style="background-color:#00008B; color:white; width:210px; height:40px"></br></br>
+    <h1> </h1>
+<hr>
+</br>
+</br>
+</center>
+
+<a href = "{%url 'home'%}" style="color: white; font-size: 25px;"><p style="text-align:center">GO TO HOME PAGE</a>
+</form>
+{% endblock %}
+</body>
+</html>

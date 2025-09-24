@@ -1,0 +1,58 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+	        background: url('https://img.freepik.com/premium-photo/ghibli-studio-background_931878-108604.jpg') no-repeat center center fixed;
+	        background-size: cover;
+        }
+    </style>
+</head>
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<form action="#" method ="post">
+{%csrf_token%}
+<center><h2 style="color:white">VIEW YOUR MARKS</h2>
+<hr>
+  <div class="form-group">
+    
+    <input type="integer" class="form-control" aria-describedby="emailHelp" placeholder="student" name="student">
+    
+  </div>
+
+<input type="submit" value="View">
+<hr>
+<table border="1" style="background-color: #e0f2f7;">
+    <tr>
+	<th>ID</th>
+        <th>English</th>
+        <th>Hindi</th>
+	<th>Social_Science</th>
+	<th>Science</th>
+	<th>Mathematics</th>
+
+    </tr>
+    {% for result in data %}
+    <tr>
+	<td>{{result.student}}</td>
+        <td>{{result.english}}</td>
+        <td>{{result.hindi}}</td>
+        <td>{{result.social_science}}</td>
+	<td>{{result.science}}</td>
+	<td>{{result.mathematics}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</br>
+</br>
+</br>
+
+<a href = "{%url 'select_student'%}" style="color: white; font-size: 25px;"><p style="text-align:center" >CREATE ANOTHER STUDENT MARKS ENTRY</a>
+<a href = "{%url 'teacher'%}" style="color: white; font-size: 25px;"><p style="text-align:center">GO TO HOME PAGE</a>
+
+</form>
+{% endblock %}
+</body>
+</html>
