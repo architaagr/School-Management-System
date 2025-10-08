@@ -25,7 +25,7 @@ def std_details(request):
             mydb = mysql.connector.connect(
               host="localhost",
               user="root",
-              password="1908",
+              password=<password>,
               database="school_management"
             )
 
@@ -131,7 +131,7 @@ def enter_marks(request):
             return render(request, 'enter_marks.html')
 
         try:
-            connection = mcon.connect(user='root', host='localhost', password='1908', database='school_management')
+            connection = mcon.connect(user='root', host='localhost', password=<password>, database='school_management')
             if connection.is_connected():
                 cursor = connection.cursor()
 
@@ -204,7 +204,7 @@ def update_marks(request):
             return render(request, 'update_marks.html')
 
         try:
-            connection = mcon.connect(user='root', host='localhost', password='1908', database='school_management')
+            connection = mcon.connect(user='root', host='localhost', password=<password>, database='school_management')
             if connection.is_connected():
                 cursor = connection.cursor()
 
